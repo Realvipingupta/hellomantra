@@ -35,6 +35,9 @@ stages:
         repository: $(imageRepository)
         dockerfile: $(dockerfilePath)
         containerRegistry: $(dockerRegistryServiceConnection)
-        tags: latest
         tags: $(tag)
-          
+    - task: Docker@2
+      inputs:
+        containerRegistry: 'greenbrillance'
+        command: 'tag'
+        arguments: 'docker tag greenbrillance.azurecr.io/frontend/hellomantra:$(Build.BuildNumber) greenbrillance.azurecr.io/frontend/hellomantra:latest'
