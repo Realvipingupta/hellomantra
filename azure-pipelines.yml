@@ -40,5 +40,4 @@ stages:
     - task: Bash@3
       inputs:
         targetType: 'inline'
-        script: 'docker images'
-        script: 'docker tag greenbrillance.azurecr.io/frontend/hellomantra:$(tag) greenbrillance.azurecr.io/frontend/hellomantra:latest'
+        script: 'docker images''docker tag greenbrillance.azurecr.io/frontend/hellomantra:$(tag) greenbrillance.azurecr.io/frontend/hellomantra:latest'
