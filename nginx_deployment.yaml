@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginxapp
+  labels:
+    app: nginxapp
+spec:
+  containers:
+  - image: greenbrillance.azurecr.io/frontend/hellomantra:latest
+    name: nginximage
+    ports:
+    - containerPort: 80
+      protocol: TCP
