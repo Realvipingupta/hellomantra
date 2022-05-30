@@ -1,14 +1,26 @@
-apiVersion: v1
-kind: Pod
+
+apiVersion: apps/v1
+kind: Deployment
 metadata:
   name: nginxapp
-  labels:
-    app: nginxapp
 spec:
-  containers:
-  - image: greenbrillance.azurecr.io/frontend/hellomantra:latest
-    name: nginximage
-    imagePullPolicy: Always
-    ports:
-    - containerPort: 80
-      protocol: TCP
+  selector:
+    matchLabels:
+      app: nginxapp
+  replicas: 4 # tells deployment to run 2 pods matching the template
+  strategy:
+     type: RollingUpdate
+     rollingUpdate:
+       maxSurge: 0
+       maxUnavailable: 20%
+  template:
+    metadata:
+      labels:
+        app: nginxapp
+    spec:
+      containers:
+      - name: nginxhellomantra
+        image: greenbrillance.azurecr.io/frontend/hellomantra:latest
+        ports:
+        - containerPort: 80
+          protocol: TCP
