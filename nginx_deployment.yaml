@@ -6,7 +6,7 @@ metadata:
     app: nginxapp
 spec:
   containers:
-  - image: greenbrillance.azurecr.io/frontend/hellomantra:env:BuildId
+  - image: greenbrillance.azurecr.io/frontend/hellomantra:latest
     name: nginximage
     imagePullPolicy: Always
     ports:
