@@ -8,6 +8,7 @@ spec:
   containers:
   - image: greenbrillance.azurecr.io/frontend/hellomantra:latest
     name: nginximage
+    imagePullPolicy: Always
     ports:
     - containerPort: 80
       protocol: TCP
