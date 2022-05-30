@@ -39,3 +39,4 @@ stages:
           $(Build.BuildNumber)
           latest
           $(Build.SourceVersion)
+          $(Build.BuildId)
