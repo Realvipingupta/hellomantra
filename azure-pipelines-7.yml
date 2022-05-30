@@ -11,7 +11,7 @@ resources:
 variables:
   # Container registry service connection established during pipeline creation
   dockerRegistryServiceConnection: 'd781658d-bbc8-4879-84ab-4740024d0b73'
-  imageRepository: 'realvipinguptahellomantra'
+  imageRepository: 'frontend/hellomantra'
   containerRegistry: 'greenbrillance.azurecr.io'
   dockerfilePath: './Dockerfile'
   tag: '$(Build.BuildId)'
